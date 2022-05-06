@@ -2,16 +2,22 @@ import '../style/Common.css'
 import Form from '../components/Form'
 import Button from '../components/Button';
 import React, { useState } from "react";
+import Backend from '../service/Backend.js';
 
 export default function Home() {
     const [aprendizaje, setAprendizaje] = useState("Sin Calcular");
     const handleCalculate = (e) => {
 
+        Backend.getAprendizaje({ header: "Tipo de aprendizaje" }).then(response => {
+            setAprendizaje(response)
+        })
+
+
         const ec = parseInt(document.estilo.c5.value) + parseInt(document.estilo.c9.value) + parseInt(document.estilo.c13.value) + parseInt(document.estilo.c17.value) + parseInt(document.estilo.c25.value) + parseInt(document.estilo.c29.value);
         const or = parseInt(document.estilo.c2.value) + parseInt(document.estilo.c10.value) + parseInt(document.estilo.c22.value) + parseInt(document.estilo.c26.value) + parseInt(document.estilo.c30.value) + parseInt(document.estilo.c34.value);
         const ca = parseInt(document.estilo.c7.value) + parseInt(document.estilo.c11.value) + parseInt(document.estilo.c15.value) + parseInt(document.estilo.c19.value) + parseInt(document.estilo.c31.value) + parseInt(document.estilo.c35.value);
         const ea = parseInt(document.estilo.c4.value) + parseInt(document.estilo.c12.value) + parseInt(document.estilo.c24.value) + parseInt(document.estilo.c28.value) + parseInt(document.estilo.c32.value) + parseInt(document.estilo.c36.value);
-        setAprendizaje(document.estilo.c5.value);
+        // setAprendizaje(document.estilo.c5.value);
 
     };
     const selectFiltro = ['1', '2', '3', '4'];
