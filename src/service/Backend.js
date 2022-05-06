@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'https://backend-euclides.vercel.app';
+const BASE_URL = 'https://euclides.azurewebsites.net';
 const backend = {
     getAprendizaje: async (data) => {
 
