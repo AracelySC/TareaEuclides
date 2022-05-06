@@ -10,6 +10,7 @@ export default function Home() {
 
         backend.getAprendizaje({ header: "Tipo de aprendizaje" }).then(response => {
             setAprendizaje(response);
+            console.log(response);
         })
 
 

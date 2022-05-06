@@ -8,7 +8,7 @@ const backend = {
                 console.log(response.data[0]);
                 return response.data[0];
             }).catch(error => {
-                console.log(error);
+                console.log("error");
             })
             .finally(() => {
 
