@@ -5,7 +5,7 @@ const backend = {
 
         const response = await axios.post(BASE_URL + '/aprendizaje/get', { data })
             .then((response) => {
-                return response.data[0];
+                return response.data;
             }).catch(error => {
                 console.log(error);
             })
