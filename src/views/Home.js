@@ -2,14 +2,14 @@ import '../style/Common.css'
 import Form from '../components/Form'
 import Button from '../components/Button';
 import React, { useState } from "react";
-import Backend from '../service/Backend.js';
+import backend from '../service/Backend.js';
 
 export default function Home() {
     const [aprendizaje, setAprendizaje] = useState("Sin Calcular");
     const handleCalculate = (e) => {
 
-        Backend.getAprendizaje({ header: "Tipo de aprendizaje" }).then(response => {
-            setAprendizaje(response)
+        backend.getAprendizaje({ header: "Tipo de aprendizaje" }).then(response => {
+            setAprendizaje(response);
         })
 
 
