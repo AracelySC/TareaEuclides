@@ -1,5 +1,6 @@
 import axios from 'axios';
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://euclides.azurewebsites.net';
+// const BASE_URL = 'http://localhost:3000';
 const backend = {
     getAprendizaje: async (data) => {
 
