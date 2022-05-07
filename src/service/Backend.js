@@ -1,12 +1,12 @@
 import axios from 'axios';
-const BASE_URL = 'https://euclides.azurewebsites.net';
+const BASE_URL = 'http://localhost:3000';
 const backend = {
     getAprendizaje: async (data) => {
 
         const response = await axios.post(BASE_URL + '/aprendizaje/get', { data })
             .then((response) => {
-                console.log(response.data[0]);
-                return response.data[0];
+                console.log(response.data);
+                return response.data;
             }).catch(error => {
                 console.log("error");
             })
@@ -19,7 +19,7 @@ const backend = {
 
         const response = await axios.post(BASE_URL + '/recinto/get', { data })
             .then((response) => {
-                return response.data[0];
+                return response.data;
             }).catch(error => {
                 console.log(error);
             })
@@ -32,7 +32,7 @@ const backend = {
 
         const response = await axios.post(BASE_URL + '/sexo/get', { data })
             .then((response) => {
-                return response.data[0];
+                return response.data;
             }).catch(error => {
                 console.log(error);
             })
@@ -45,7 +45,7 @@ const backend = {
 
         const response = await axios.post(BASE_URL + '/aprendizaje2/get', { data })
             .then((response) => {
-                return response.data[0];
+                return response.data;
             }).catch(error => {
                 console.log(error);
             })
@@ -58,7 +58,7 @@ const backend = {
 
         const response = await axios.post(BASE_URL + '/profesor/get', { data })
             .then((response) => {
-                return response.data[0];
+                return response.data;
             }).catch(error => {
                 console.log(error);
             })
@@ -71,7 +71,7 @@ const backend = {
 
         const response = await axios.post(BASE_URL + '/redes/get', { data })
             .then((response) => {
-                return response.data[0];
+                return response.data;
             }).catch(error => {
                 console.log(error);
             })

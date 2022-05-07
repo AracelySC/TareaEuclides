@@ -3,14 +3,26 @@ import '../style/Common.css'
 import Button from '../components/Button';
 import React, { useState } from "react";
 import CustomInput from "../components/Input";
+import backend from '../service/Backend.js';
 
 export default function Aprendizaje() {
 
     const [aprendizaje, setAprendizaje] = useState("Sin Calcular");
+
     const handleCalculate = (e) => {
+        const recinto= document.aprendizajeForm.recinto.value;
+        const promedio= document.aprendizajeForm.promedio.value;
+        const sexo= document.aprendizajeForm.sexo.value;
+        console.log(sexo +"  "+promedio+"  "+recinto);
+          
+          backend.getAprendizaje2({"data": [sexo, recinto, promedio,"n", "n","n","n", "n", "n","n"]
+              }).then(response => {
+                  setAprendizaje(response);
+              console.log(response);
+          })
 
     };
-    const selectFiltro = ['Femenino', 'Masculino'];
+    const selectFiltro = ['F', 'M'];
     const selectFiltro1 = ['Turrialba', 'Paraiso'];
     return(
         <div className='body'>
@@ -29,10 +41,10 @@ export default function Aprendizaje() {
                         </select>
                     </div>
                     <span>Último promedio para matrícula: </span>
-                    <CustomInput errorMsg="Inserte el promedio" className='mt-2' name='promedio' placeholder='Último promedio para matrícula'></CustomInput>
+                    <CustomInput errorMsg="Inserte el promedio"  type="number" min="0" className='mt-2' name='promedio' placeholder='Último promedio para matrícula'></CustomInput>
                     <div>
                         <span>Recinto: </span>
-                        <select name="Sexo">
+                        <select name="sexo">
                             {selectFiltro.map(value => (
                                 <option key={value} value={value}>
                                     {value}
